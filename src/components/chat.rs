@@ -139,6 +139,7 @@ impl Component for Chat {
         let submit = ctx.link().callback(|_| Msg::SubmitMessage);
 
         html! {
+            <body class="chat-page">
             <div class="flex w-screen">
                 <div class="flex-none w-56 h-screen bg-gray-100">
                     <div class="text-xl p-3">{"Users"}</div>
@@ -163,7 +164,7 @@ impl Component for Chat {
                     }
                 </div>
                 <div class="grow h-screen flex flex-col">
-                    <div class="w-full h-14 border-b-2 border-gray-300"><div class="text-xl p-3">{"💬 Chat!"}</div></div>
+                    <div class="w-full h-14 border-b-2 border-gray-300"><div class="text-xl p-3 text-white">{"💬 Chat!"}</div></div>
                     <div class="w-full grow overflow-auto border-b-2 border-gray-300">
                         {
                             self.messages.iter().map(|m| {
@@ -199,6 +200,7 @@ impl Component for Chat {
                     </div>
                 </div>
             </div>
+            </body>
         }
     }
 }
